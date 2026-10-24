@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0a1012" />
+    <meta
+      name="description"
+      content="Un viaje visual e interactivo por 4.540 millones de años de historia de la Tierra. Del primer fuego al mundo que habitamos."
+    />
+    <meta
+      property="og:title"
+      content="Tierra — Un viaje por el tiempo profundo"
+    />
+    <meta
+      property="og:description"
+      content="Explora ocho momentos que cambiaron nuestro planeta. Una historia extraordinaria. Nuestro único hogar."
+    />
+    <meta property="og:type" content="website" />
+    <title>Tierra — Un viaje por el tiempo profundo</title>
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#viaje">Saltar al viaje interactivo</a>
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="Tierra, inicio"
+        ><svg viewBox="0 0 36 36" aria-hidden="true">
+          <circle cx="18" cy="18" r="10" />
+          <ellipse
+            cx="18"
+            cy="18"
+            rx="17"
+            ry="6"
+            transform="rotate(-35 18 18)"
+          />
+          <path d="M18 8c-7 5-7 15 0 20M18 8c7 5 7 15 0 20" /></svg
+        ><span>TIERRA<span class="brand-sub">ARCHIVO DEL TIEMPO</span></span></a
+      >
+      <nav aria-label="Navegación principal">
+        <a href="#viaje">El viaje</a><a href="#escala">La escala</a
+        ><a href="#fuentes">Fuentes <span aria-hidden="true">↗</span></a>
+      </nav>
+      <a class="header-cta" href="#viaje"
+        >Explorar <span aria-hidden="true">↗</span></a
+      >
+    </header>
+
+    <main>
+      <section class="hero" id="inicio" aria-labelledby="hero-title">
+        <div class="starfield" aria-hidden="true"></div>
+        <div class="hero-copy">
+          <p class="eyebrow">
+            <span class="status-dot"></span> UN VIAJE POR EL TIEMPO PROFUNDO
+          </p>
+          <h1 id="hero-title">Todo empieza<br />con un <em>planeta.</em></h1>
+          <p class="hero-description">
+            Antes de los bosques. Antes de los dinosaurios.<br />Antes de que
+            alguien mirara las estrellas.<br />Esta es la historia de nuestro
+            hogar.
+          </p>
+          <a class="button button-orange" href="#viaje"
+            >Comenzar el viaje <span aria-hidden="true">↗</span></a
+          >
+          <span class="hero-footnote"
+            >4.540 millones de años. Ocho momentos para descubrirlos.</span
+          >
+        </div>
+        <figure class="hero-planet">
+          <div class="orbital orbital-one" aria-hidden="true"></div>
+          <div class="orbital orbital-two" aria-hidden="true"></div>
+          <div class="planet-wrap">
+            <img
+              class="planet-fallback"
+              src="./assets/earth-fallback.png"
+              alt="La Tierra azul iluminada, rodeada por la oscuridad del espacio"
+              width="720"
+              height="720"
+            /><canvas id="hero-globe" class="globe" aria-hidden="true"></canvas>
+          </div>
+          <span class="planet-coordinate" aria-hidden="true"
+            >SOL / TERCER PLANETA</span
+          >
+          <figcaption>
+            <span class="tiny-cross" aria-hidden="true">+</span> UN MUNDO.
+            INCONTABLES HISTORIAS.
+          </figcaption>
+        </figure>
+        <div class="hero-bottom">
+          <span
+            ><span class="scroll-mark" aria-hidden="true">↓</span> Desliza para
+            viajar en el tiempo</span
+          ><span class="mono"
+            >01 — 08 <span class="muted">/ EL ARCHIVO</span></span
+          >
+        </div>
+      </section>
+
+      <section class="journey" id="viaje" aria-labelledby="journey-title">
+        <div class="section-top">
+          <p class="eyebrow">01 / EL GRAN VIAJE</p>
+          <span class="section-aside">No siempre fue el planeta azul.</span>
+        </div>
+        <div class="section-heading">
+          <h2 id="journey-title">
+            El mundo cambió.<br /><em>Una y otra vez.</em>
+          </h2>
+          <p>
+            Elige un momento. Descubre un planeta<br class="desktop-break" />
+            que apenas reconocerías.
+          </p>
+        </div>
+        <div
+          class="epoch-tabs"
+          role="tablist"
+          aria-label="Momentos de la historia de la Tierra"
+          aria-orientation="horizontal"
+        ></div>
+        <div
+          class="epoch-panel"
+          id="epoch-panel"
+          role="tabpanel"
+          tabindex="0"
+          aria-labelledby="epoch-tab-0"
+        >
+          <div class="epoch-visual" data-mode="0">
+            <span class="visual-kicker mono">RECONSTRUCCIÓN ARTÍSTICA</span>
+            <div class="epoch-orbit" aria-hidden="true"></div>
+            <div class="epoch-planet-wrap">
+              <img
+                class="epoch-fallback"
+                src="./assets/earth-fallback.png"
+                alt=""
+                width="720"
+                height="720"
+              /><canvas
+                id="epoch-globe"
+                aria-label="Interpretación artística de la Tierra primitiva"
+                role="img"
+              ></canvas>
+            </div>
+            <span class="visual-caption">Un planeta en construcción.</span>
+            <span class="visual-index mono" aria-hidden="true">01 / 08</span>
+          </div>
+          <article class="epoch-copy" aria-live="polite" aria-atomic="true">
+            <p class="eyebrow" id="epoch-age">HACE ≈4.540 MILLONES DE AÑOS</p>
+            <h3 id="epoch-title">Del polvo<br />al fuego.</h3>
+            <p id="epoch-text">
+              La gravedad reunió material del joven sistema solar hasta formar
+              la Tierra. Las colisiones liberaron enormes cantidades de energía:
+              nuestro hogar comenzó como un mundo muy caliente, nada parecido al
+              actual.
+            </p>
+            <div class="epoch-detail">
+              <span class="detail-label mono">LA IDEA CLAVE</span>
+              <p id="epoch-fact">
+                La edad del planeta se estima mediante relojes naturales: los
+                isótopos radiactivos de rocas y meteoritos.
+              </p>
+            </div>
+            <a
+              class="source-link"
+              id="epoch-source"
+              href="https://pubs.usgs.gov/gip/geotime/age.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Leer la evidencia <span aria-hidden="true">↗</span
+              ><span class="sr-only"> (abre en otra pestaña)</span></a
+            >
+            <div class="epoch-controls">
+              <button
+                type="button"
+                id="previous-epoch"
+                class="round-button"
+                aria-label="Momento anterior"
+              >
+                ←</button
+              ><span class="mono" id="epoch-count">01 / 08</span
+              ><button
+                type="button"
+                id="next-epoch"
+                class="round-button"
+                aria-label="Momento siguiente"
+              >
+                →
+              </button>
+            </div>
+          </article>
+        </div>
+        <p class="science-note">
+          Fechas aproximadas. Ocho hitos seleccionados, no una escala geológica
+          completa. Las ilustraciones del pasado son interpretaciones
+          artísticas, no mapas paleogeográficos.
+        </p>
+        <noscript
+          ><p class="noscript-note">
+            Activa JavaScript para explorar los ocho momentos y el reloj. Puedes
+            consultar las fuentes científicas al final de la página.
+          </p></noscript
+        >
+      </section>
+
+      <section class="scale" id="escala" aria-labelledby="scale-title">
+        <div class="section-top">
+          <p class="eyebrow">02 / TODO ES CUESTIÓN DE ESCALA</p>
+          <span class="section-aside">Una perspectiva diferente.</span>
+        </div>
+        <div class="scale-layout">
+          <div class="scale-copy">
+            <h2 id="scale-title">
+              ¿Y si toda la historia<br />durara <em>un día?</em>
+            </h2>
+            <p>
+              Comprime 4.540 millones de años en 24 horas. Mueve el control y
+              descubre a qué hora sucedió cada momento.
+            </p>
+            <p class="scale-whisper">
+              Nosotros llegamos casi al último segundo.
+            </p>
+          </div>
+          <div class="clock-exhibit">
+            <div class="clock-face" aria-hidden="true">
+              <span class="clock-label clock-label-top">00:00</span
+              ><span class="clock-label clock-label-right">06</span
+              ><span class="clock-label clock-label-bottom">12</span
+              ><span class="clock-label clock-label-left">18</span>
+              <div class="clock-hand"></div>
+              <div class="clock-center"></div>
+              <div class="clock-inner">
+                <span class="mono">EL DÍA DE LA TIERRA</span
+                ><strong id="clock-time">00:00:00</strong
+                ><span id="clock-event">Nace la Tierra</span>
+              </div>
+            </div>
+            <label for="time-slider" class="slider-label"
+              ><span>Explora los 8 hitos</span
+              ><output id="slider-position" for="time-slider"
+                >1 de 8</output
+              ></label
+            >
+            <input
+              id="time-slider"
+              type="range"
+              min="0"
+              max="7"
+              step="1"
+              value="0"
+              aria-describedby="clock-explanation"
+            />
+            <p
+              id="clock-explanation"
+              class="clock-explanation"
+              aria-live="polite"
+            >
+              00:00:00 — La Tierra comienza su historia.
+            </p>
+            <p class="clock-note">
+              Cada segundo representa unos
+              <span id="seconds-scale">52.546</span> años. Los hitos del control
+              están espaciados por igual; el reloj muestra su tiempo
+              proporcional real.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="closing" aria-labelledby="closing-title">
+        <p class="eyebrow">03 / EL CAPÍTULO QUE SIGUE</p>
+        <p class="closing-intro">
+          El planeta siguió cambiando.<br />Y entonces, aparecimos nosotros.
+        </p>
+        <h2 id="closing-title">
+          Somos un instante.<br /><em>Este es nuestro hogar.</em>
+        </h2>
+        <p>
+          Conocer su pasado es una forma de mirar<br />con otros ojos el mundo
+          que compartimos.
+        </p>
+        <a class="text-link" href="#inicio"
+          >Volver al principio <span aria-hidden="true">↑</span></a
+        >
+        <div class="strata" aria-hidden="true">
+          <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        </div>
+      </section>
+
+      <section class="sources" id="fuentes" aria-labelledby="sources-title">
+        <div>
+          <p class="eyebrow">DETRÁS DEL VIAJE</p>
+          <h2 id="sources-title">Curiosidad, con evidencia.</h2>
+          <p>
+            Una introducción al tiempo profundo, basada en divulgación
+            científica y literatura académica. Las fechas se redondean para
+            facilitar la lectura; las evidencias y sus interpretaciones pueden
+            revisarse.
+          </p>
+        </div>
+        <div class="source-list">
+          <a
+            href="https://pubs.usgs.gov/gip/geotime/age.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><span
+              ><b>USGS</b><small>Cómo sabemos la edad de la Tierra</small></span
+            ><span aria-hidden="true">↗</span></a
+          >
+          <a
+            href="https://science.nasa.gov/earth/facts/"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><span
+              ><b>NASA Science</b
+              ><small>Formación, estructura y primeros océanos</small></span
+            ><span aria-hidden="true">↗</span></a
+          >
+          <a
+            href="https://science.nasa.gov/moon/formation/"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><span
+              ><b>NASA · La Luna</b
+              ><small>La hipótesis del gran impacto</small></span
+            ><span aria-hidden="true">↗</span></a
+          >
+          <a
+            href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8403206/"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><span
+              ><b>Astrobiology · Lyons et al.</b
+              ><small>La oxigenación y la historia de la vida</small></span
+            ><span aria-hidden="true">↗</span></a
+          >
+          <a
+            href="https://www.nhm.ac.uk/discover/the-cambrian-period.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><span
+              ><b>Natural History Museum</b
+              ><small>La diversificación del Cámbrico</small></span
+            ><span aria-hidden="true">↗</span></a
+          >
+          <a
+            href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12329462/"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><span
+              ><b>Literatura científica · Royal Society</b
+              ><small>Las primeras evidencias de vida</small></span
+            ><span aria-hidden="true">↗</span></a
+          >
+          <a
+            href="https://www.nhm.ac.uk/discover/where-did-dinosaurs-come-from.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><span
+              ><b>Natural History Museum</b
+              ><small>El origen de los dinosaurios</small></span
+            ><span aria-hidden="true">↗</span></a
+          >
+          <a
+            href="https://www.nhm.ac.uk/discover/news/2020/november/dinosaurs-were-not-in-decline-before-the-asteroid-wiped-them-out.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><span
+              ><b>Natural History Museum</b
+              ><small>El impacto y la extinción del Cretácico</small></span
+            ><span aria-hidden="true">↗</span></a
+          >
+          <a
+            href="https://humanorigins.si.edu/evidence/human-fossils/species/homo-sapiens"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><span
+              ><b>Smithsonian</b><small>El origen de Homo sapiens</small></span
+            ><span aria-hidden="true">↗</span></a
+          >
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <a class="footer-brand" href="#inicio"
+        >TIERRA<span>Un archivo del tiempo profundo.</span></a
+      >
+      <p>
+        Textura terrestre: NASA Visible Earth / Blue Marble.<br />Diseño
+        educativo independiente. Sin afiliación institucional.
+      </p>
+      <button id="motion-toggle" type="button" aria-pressed="false">
+        Pausar movimiento <span aria-hidden="true">Ⅱ</span>
+      </button>
+    </footer>
+  </body>
+</html>

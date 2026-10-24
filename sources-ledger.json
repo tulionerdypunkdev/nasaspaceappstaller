@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://science.nasa.gov/earth/facts",
+      "title": "",
+      "accessed": "2026-10-23"
+    },
+    {
+      "id": 2,
+      "url": "https://science.nasa.gov/moon/formation",
+      "title": "",
+      "accessed": "2026-10-23"
+    },
+    {
+      "id": 3,
+      "url": "https://humanorigins.si.edu/evidence/human-fossils/species/homo-sapiens",
+      "title": "",
+      "accessed": "2026-10-23"
+    },
+    {
+      "id": 4,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8403206",
+      "title": "",
+      "accessed": "2026-10-23"
+    },
+    {
+      "id": 5,
+      "url": "https://www.nhm.ac.uk/discover/when-did-dinosaurs-live.html",
+      "title": "",
+      "accessed": "2026-10-23"
+    },
+    {
+      "id": 6,
+      "url": "https://pubs.usgs.gov/gip/geotime/age.html",
+      "title": "",
+      "accessed": "2026-10-23"
+    },
+    {
+      "id": 7,
+      "url": "https://www.nhm.ac.uk/discover/the-cambrian-period.html",
+      "title": "",
+      "accessed": "2026-10-23"
+    },
+    {
+      "id": 8,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12329462",
+      "title": "",
+      "accessed": "2026-10-23"
+    },
+    {
+      "id": 9,
+      "url": "https://www.nhm.ac.uk/discover/where-did-dinosaurs-come-from.html",
+      "title": "",
+      "accessed": "2026-10-23"
+    },
+    {
+      "id": 10,
+      "url": "https://www.nhm.ac.uk/discover/news/2020/november/dinosaurs-were-not-in-decline-before-the-asteroid-wiped-them-out.html",
+      "title": "",
+      "accessed": "2026-10-23"
+    },
+    {
+      "id": 11,
+      "url": "https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site",
+      "title": "",
+      "accessed": "2026-10-23"
+    }
+  ]
+}
